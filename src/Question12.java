@@ -2,23 +2,27 @@ import java.util.Scanner;
 
 public class Question12 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        // 배열 선언 및 초기화
+        int[] arr = {5, 10, 15, 20, 25, 30};
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("과목 1을 입력해주세요 : ");
-        int num1 = sc.nextInt();
-        System.out.print("과목 2을 입력해주세요 : ");
-        int num2 = sc.nextInt();
-        System.out.print("과목 3을 입력해주세요 : ");
-        int num3 = sc.nextInt();
-        System.out.print("과목 4을 입력해주세요 : ");
-        int num4 = sc.nextInt();
+        // 사용자로부터 값 입력 받기
+        System.out.print("배열에서 찾고 싶은 값을 입력하세요: ");
+        int searchValue = scanner.nextInt();
 
-        double avg = (double) (num1 + num2 + num3 + num4) / 4;
+        // 배열에서 해당 값의 인덱스 찾기
+        boolean found = false;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == searchValue) {
+                System.out.println("값의 위치(인덱스): " + i);
+                found = true;
+                break;
+            }
+        }
 
-        if(avg >= 60){
-            System.out.print("합격");
-        }else{
-            System.out.print("불합격");
+        // 값이 배열에 없을 경우
+        if (!found) {
+            System.out.println("값을 찾을 수 없습니다.");
         }
     }
 }

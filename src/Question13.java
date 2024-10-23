@@ -1,91 +1,25 @@
-import java.util.Scanner;
-
 public class Question13 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        int[][] matrix = {
+                {1,2,3},
+                {4,5,6},
+                {7,8,9}
+        };
 
-        System.out.print("첫번째 숫자를 입력해주세요 : ");
-        int first = sc.nextInt();
-        System.out.print("첫번째 연산자(+, -, *, /): ");
-        String operation1 = sc.next();
-
-        System.out.print("두번째 숫자를 입력해주세요 : ");
-        int second = sc.nextInt();
-
-        System.out.print("두번째 연산자(+, -, *, /): ");
-        String operation2 = sc.next();
-        System.out.print("세번째 숫자를 입력해주세요 : ");
-        int third = sc.nextInt();
-
-        double result = 0.0;
-
-        switch (operation1){
-            case "*":
-                switch(operation2){
-                    case "*":
-                        result = (first*second)*third;
-                        break;
-                    case "/":
-                        result = (first*second)/third;
-                        break;
-                    case "+":
-                        result = (first*second)+third;
-                        break;
-                    case "-":
-                        result = (first*second)-third;
-                        break;
-                }
-                break;
-            case "/":
-                switch(operation2){
-                    case "*":
-                        result = (first/second)*third;
-                        break;
-                    case "/":
-                        result = (first/second)/third;
-                        break;
-                    case "+":
-                        result = (first/second)+third;
-                        break;
-                    case "-":
-                        result = (first/second)-third;
-                        break;
-                }
-                break;
-            case "+":
-                switch(operation2){
-                    case "*":
-                        result = first+(second*third);
-                        break;
-                    case "/":
-                        result = first/(second/third);
-                        break;
-                    case "+":
-                        result = first+(second+third);
-                        break;
-                    case "-":
-                        result = first-(second-third);
-                        break;
-                }
-                break;
-            case "-":
-                switch(operation2){
-                    case "*":
-                        result = first*(second*third);
-                        break;
-                    case "/":
-                        result = first/(second/third);
-                        break;
-                    case "+":
-                        result = first+(second+third);
-                        break;
-                    case "-":
-                        result = first-(second-third);
-                        break;
-                }
-                break;
+        for (int i = 0; i < matrix.length; i++) {
+            int rowSum = 0;
+            for (int j = 0; j < matrix[i].length; j++) {
+                rowSum+=matrix[i][j];
+            }
+            System.out.println("행 "+i+"의 합: "+rowSum);
         }
-        System.out.println(result);
+        for (int i = 0; i < matrix[0].length; i++) {
+            int colSum = 0;
+            for(int j = 0; j < matrix.length; j++) {
+                colSum+=matrix[j][i];
+            }
+            System.out.println("열 "+i+"의 합: "+colSum);
+        }
     }
 }
 

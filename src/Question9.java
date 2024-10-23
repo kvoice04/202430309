@@ -1,31 +1,20 @@
-import java.util.Scanner;
-
 public class Question9 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        // 원본 배열 선언 및 초기화
+        int[] original = {1, 2, 3, 4, 5};
 
-        System.out.print("첫 번째 숫자: ");
-        int first = sc.nextInt();
-        System.out.print("두 번째 숫자: ");
-        int second = sc.nextInt();
-        System.out.print("연산자(+, -, *, /): ");
-        String operation = sc.next();
+        // 복사할 배열 선언
+        int[] copy = new int[original.length];
 
-        if (operation.equals("+")) {
-            System.out.println(first + second);
-        } else if (operation.equals("-")) {
-            System.out.println(first - second);
-        } else if (operation.equals("*")) {
-            System.out.println(first * second);
-        } else if (operation.equals("/")) {
-            if (second != 0) {
-                System.out.println(first / second);
-            } else {
-                System.out.println("0으로 나눌 수 없습니다.");
-            }
-        } else {
-            System.out.println("올바른 연산자를 입력하세요.");
+        // 배열 복사
+        for (int i = 0; i < original.length; i++) {
+            copy[i] = original[i];
         }
-        sc.close();
+
+        // 복사된 배열 출력
+        System.out.println("복사된 배열:");
+        for (int i = 0; i < copy.length; i++) {
+            System.out.println(copy[i]);
+        }
     }
 }

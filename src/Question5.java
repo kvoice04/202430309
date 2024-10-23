@@ -1,16 +1,19 @@
-import java.util.Scanner;
-
 public class Question5 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("나이를 입력하세요: ");
-        int age = sc.nextInt();
+        // 배열 선언 및 초기화
+        int[] arr = {12, 3, 19, 7, 5};
 
-        if (age >= 18) {
-            System.out.println("성인입니다.");
-        } else {
-            System.out.println("미성년자입니다.");
+        // 최소값을 첫 번째 요소로 초기화
+        int min = arr[0];
+
+        // 배열에서 최소값 찾기
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
         }
+
+        // 최소값 출력
+        System.out.println("배열의 최소값: " + min);
     }
 }
-

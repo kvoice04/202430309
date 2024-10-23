@@ -1,20 +1,9 @@
-import java.util.Scanner;
-
 public class Question2 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a number (1-7): ");
-        int day = sc.nextInt();
+        // 배열 선언 및 크기 10으로 지정
+        int[] arr = new int[10];
 
-        switch (day) {
-            case 1: System.out.println("월요일"); break;
-            case 2: System.out.println("화요일"); break;
-            case 3: System.out.println("수요일"); break;
-            case 4: System.out.println("목요일"); break;
-            case 5: System.out.println("금요일"); break;
-            case 6: System.out.println("토요일"); break;
-            case 7: System.out.println("일요일"); break;
-            default: System.out.println("잘못 입력했습니다. 1부터 7까지 입력 가능합니다.");
-        }
+        // 배열의 길이 출력
+        System.out.println("배열의 길이: " + arr.length);
     }
 }

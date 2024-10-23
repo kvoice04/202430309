@@ -1,29 +1,19 @@
-import java.util.Scanner;
-
 public class Question4 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        // 배열 선언 및 초기화
+        int[] arr = {3, 7, 2, 9, 4};
 
-        System.out.print("첫 번째 숫자: ");
-        int first = sc.nextInt();
-        System.out.print("두 번째 숫자: ");
-        int second = sc.nextInt();
-        System.out.print("연산자(+, -, *, /): ");
-        String operation = sc.next();
+        // 최대값을 첫 번째 요소로 초기화
+        int max = arr[0];
 
-        switch (operation) {
-            case "+": System.out.println(first + second); break;
-            case "-": System.out.println(first - second); break;
-            case "*": System.out.println(first * second); break;
-            case "/":
-                if (second != 0) {
-                    System.out.println(first / second);
-                } else {
-                    System.out.println("0으로 나눌 수 없습니다.");
-                }
-                break;
-            default: System.out.println("올바른 연산자를 입력하세요.");
+        // 배열에서 최대값 찾기
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
         }
-        sc.close();
+
+        // 최대값 출력
+        System.out.println("배열의 최대값: " + max);
     }
 }
