@@ -2,38 +2,38 @@ import java.util.Scanner;
 
 public class Calculator {
 
-    // 덧셈 메소드
+    // 덧셈
     public double add(double num1, double num2) {
         return num1 + num2;
     }
 
-    // 뺄셈 메소드
+    // 뺄셈
     public double subtract(double num1, double num2) {
         return num1 - num2;
     }
 
-    // 곱셈 메소드
+    // 곱셈
     public double multiply(double num1, double num2) {
         return num1 * num2;
     }
 
-    // 나눗셈 메소드
+    // 나눗셈
     public double divide(double num1, double num2) {
         if (num2 == 0) {
-            throw new ArithmeticException("Cannot divide by zero.");
+            throw new ArithmeticException("0으로 나눌 수 없습니다.");
         }
         return num1 / num2;
     }
 
-    // 제곱 메소드
+    // 제곱
     public double power(double base, double exponent) {
         return Math.pow(base, exponent);
     }
 
-    // 제곱근 메소드
+    // 제곱근
     public double squareRoot(double num) {
         if (num < 0) {
-            throw new ArithmeticException("Cannot calculate the square root of a negative number.");
+            throw new ArithmeticException("계산을 할 수 없는 수 입니다.");
         }
         return Math.sqrt(num);
     }
@@ -76,7 +76,7 @@ public class Calculator {
                     case "%":
                         result = calculator.divide(num1, num2);
                         break;
-                    case "power":
+                    case "^":
                         result = calculator.power(num1, num2);
                         break;
                     default:
